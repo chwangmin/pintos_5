@@ -1,0 +1,37 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (args) begin
+  (args) argc = 3
+  (args) argv[0] = 'args-dbl-space'
+  (args) argv[1] = 'two'
+  (args) argv[2] = 'spaces!'
+  (args) argv[3] = null
+  (args) end
+  args-dbl-space: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (args) begin
++ 
++ 10
+  (args) argc = 3
++ 
++ 10
+  (args) argv[0] = 'args-dbl-space'
++ 
++ 10
+  (args) argv[1] = 'two'
++ 
++ 10
+  (args) argv[2] = 'spaces!'
++ 
++ 10
+  (args) argv[3] = null
++ 
++ 10
+  (args) end
++ 
++ 1
+  args-dbl-space: exit(0)

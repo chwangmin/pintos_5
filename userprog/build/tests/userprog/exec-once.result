@@ -1,0 +1,25 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (exec-once) begin
+  (exec-once) I'm your father
+  (child-simple) run
+  exec-once: exit(81)
+Differences in `diff -u' format:
++ 
++ 10
+  (exec-once) begin
++ 
++ 10
+  (exec-once) I'm your father
+- (child-simple) run
+- exec-once: exit(81)
++ 
++ 3
++ 
++ 10
++ (exec-once) end
++ 
++ 1
++ exec-once: exit(0)

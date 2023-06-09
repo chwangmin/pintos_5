@@ -1,0 +1,67 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (close-twice) begin
+  (close-twice) open "sample.txt"
+  (close-twice) close "sample.txt"
+  (close-twice) close "sample.txt" again
+  close-twice: exit(-1)
+Differences in `diff -u' format:
++ 
++ 10
+  (close-twice) begin
++ 
++ 10
+  (close-twice) open "sample.txt"
++ 
++ 7
++ 
++ 10
+  (close-twice) close "sample.txt"
++ 
++ 13
++ 
++ 10
+  (close-twice) close "sample.txt" again
+- close-twice: exit(-1)
++ 
++ 13
++ 
++ 10
++ (close-twice) end
++ 
++ 1
++ close-twice: exit(0)
+Acceptable output:
+  (close-twice) begin
+  (close-twice) open "sample.txt"
+  (close-twice) close "sample.txt"
+  (close-twice) close "sample.txt" again
+  (close-twice) end
+  close-twice: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (close-twice) begin
++ 
++ 10
+  (close-twice) open "sample.txt"
++ 
++ 7
++ 
++ 10
+  (close-twice) close "sample.txt"
++ 
++ 13
++ 
++ 10
+  (close-twice) close "sample.txt" again
++ 
++ 13
++ 
++ 10
+  (close-twice) end
++ 
++ 1
+  close-twice: exit(0)

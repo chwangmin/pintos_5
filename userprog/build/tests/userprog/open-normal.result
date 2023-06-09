@@ -1,0 +1,19 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (open-normal) begin
+  (open-normal) end
+  open-normal: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (open-normal) begin
++ 
++ 7
++ 
++ 10
+  (open-normal) end
++ 
++ 1
+  open-normal: exit(0)

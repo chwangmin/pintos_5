@@ -1,0 +1,30 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (wait-simple) begin
+  (child-simple) run
+  child-simple: exit(81)
+  (wait-simple) wait(exec()) = 81
+  (wait-simple) end
+  wait-simple: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (wait-simple) begin
+- (child-simple) run
+- child-simple: exit(81)
+- (wait-simple) wait(exec()) = 81
++ 
++ 2
++ 
++ 4
++ 
++ 10
++ (wait-simple) wait(exec()) = 4
++ 
++ 10
+  (wait-simple) end
++ 
++ 1
+  wait-simple: exit(0)

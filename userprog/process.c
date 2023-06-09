@@ -49,7 +49,9 @@ process_create_initd (const char *file_name) {
 	if (fn_copy == NULL)
 		return TID_ERROR;
 	strlcpy (fn_copy, file_name, PGSIZE);
-
+	char *token;    
+    char *save_ptr; // 분리된 문자열 중 남는 부분의 시작주소
+    file_name = strtok_r(file_name, " ", &save_ptr);
 	/* Create a new thread to execute FILE_NAME. */
 	tid = thread_create (file_name, PRI_DEFAULT, initd, fn_copy);
 	if (tid == TID_ERROR)
@@ -206,11 +208,11 @@ process_exec (void *f_name) {
     _if.R.rdi = argc; // rdi(stack의 첫번째 인자?)에 크기 저장
     _if.R.rsi = (uint64_t)*rspp + sizeof(void *); // 스택에 저장된 주소들의 첫번째 주소 argv[0]의 주소 저장
 
-	hex_dump(_if.rsp, _if.rsp, USER_STACK - (uint64_t)*rspp, true);
     palloc_free_page(file_name);
 
+	do_iret(&_if);
+	hex_dump(_if.rsp, _if.rsp, USER_STACK - (uint64_t)*rspp, true);
     /* Start switched process. */
-    do_iret(&_if);
     NOT_REACHED();
 }
 
@@ -242,7 +244,19 @@ process_exit (void) {
 	 * TODO: project2/process_termination.html).
 	 * TODO: We recommend you to implement process resource cleanup here. */
 
+	// FDT의 모든 파일을 닫고 메모리를 반환한다.
+	for (int i = 2; i < FDT_COUNT_LIMIT; i++)
+	{
+		if (curr->fdt[i] != NULL)
+			close(i);
+	}
+	palloc_free_multiple(curr->fdt, FDT_PAGES);
+	file_close(curr->running); // 현재 실행 중인 파일도 닫는다.
+
 	process_cleanup ();
+
+	sema_up(&curr->wait_sema);
+	sema_down(&curr->exit_sema);
 }
 
 /* Free the current process's resources. */
@@ -704,8 +718,6 @@ void argument_stack(char **argv, int argc, void **rsp)
         **(char ***)rsp = argv[i]; // argv[i]의 주소값을 저장
     }
 
-    // Return address
-	printf("\n abcd~~ abcd~~~ 0x%02X \n", *(uint16_t **)rsp);
     (*rsp) -= 8; // 마지막 값을
 	// 마지막 fake address 값을 넣어준다.
     **(void ***)rsp = 0; // rsp의 값을 0으로 지정한다.

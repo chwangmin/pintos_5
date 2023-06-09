@@ -1,0 +1,35 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (open-null) begin
+  (open-null) end
+  open-null: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (open-null) begin
++ 
++ 7
++ 
++ 10
+  (open-null) end
++ 
++ 1
+  open-null: exit(0)
+Acceptable output:
+  (open-null) begin
+  open-null: exit(-1)
+Differences in `diff -u' format:
++ 
++ 10
+  (open-null) begin
+- open-null: exit(-1)
++ 
++ 7
++ 
++ 10
++ (open-null) end
++ 
++ 1
++ open-null: exit(0)

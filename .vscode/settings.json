@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "syscall.h": "c",
+        "unistd.h": "c",
+        "intrinsic.h": "c",
+        "thread.h": "c",
+        "process.h": "c",
+        "gdt.h": "c",
+        "vga.h": "c",
+        "*.inc": "c",
+        "loader.h": "c",
+        "vaddr.h": "c"
+    }
+}

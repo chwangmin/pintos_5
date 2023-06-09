@@ -1,0 +1,22 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (create-bad-ptr) begin
+  create-bad-ptr: exit(-1)
+Differences in `diff -u' format:
++ 
++ 10
+  (create-bad-ptr) begin
+- create-bad-ptr: exit(-1)
++ 
++ 5
++ 
++ 10
++ (create-bad-ptr) create(0x20101234): 1
++ 
++ 10
++ (create-bad-ptr) end
++ 
++ 1
++ create-bad-ptr: exit(0)

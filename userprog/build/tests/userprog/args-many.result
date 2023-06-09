@@ -1,0 +1,117 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (args) begin
+  (args) argc = 23
+  (args) argv[0] = 'args-many'
+  (args) argv[1] = 'a'
+  (args) argv[2] = 'b'
+  (args) argv[3] = 'c'
+  (args) argv[4] = 'd'
+  (args) argv[5] = 'e'
+  (args) argv[6] = 'f'
+  (args) argv[7] = 'g'
+  (args) argv[8] = 'h'
+  (args) argv[9] = 'i'
+  (args) argv[10] = 'j'
+  (args) argv[11] = 'k'
+  (args) argv[12] = 'l'
+  (args) argv[13] = 'm'
+  (args) argv[14] = 'n'
+  (args) argv[15] = 'o'
+  (args) argv[16] = 'p'
+  (args) argv[17] = 'q'
+  (args) argv[18] = 'r'
+  (args) argv[19] = 's'
+  (args) argv[20] = 't'
+  (args) argv[21] = 'u'
+  (args) argv[22] = 'v'
+  (args) argv[23] = null
+  (args) end
+  args-many: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (args) begin
++ 
++ 10
+  (args) argc = 23
++ 
++ 10
+  (args) argv[0] = 'args-many'
++ 
++ 10
+  (args) argv[1] = 'a'
++ 
++ 10
+  (args) argv[2] = 'b'
++ 
++ 10
+  (args) argv[3] = 'c'
++ 
++ 10
+  (args) argv[4] = 'd'
++ 
++ 10
+  (args) argv[5] = 'e'
++ 
++ 10
+  (args) argv[6] = 'f'
++ 
++ 10
+  (args) argv[7] = 'g'
++ 
++ 10
+  (args) argv[8] = 'h'
++ 
++ 10
+  (args) argv[9] = 'i'
++ 
++ 10
+  (args) argv[10] = 'j'
++ 
++ 10
+  (args) argv[11] = 'k'
++ 
++ 10
+  (args) argv[12] = 'l'
++ 
++ 10
+  (args) argv[13] = 'm'
++ 
++ 10
+  (args) argv[14] = 'n'
++ 
++ 10
+  (args) argv[15] = 'o'
++ 
++ 10
+  (args) argv[16] = 'p'
++ 
++ 10
+  (args) argv[17] = 'q'
++ 
++ 10
+  (args) argv[18] = 'r'
++ 
++ 10
+  (args) argv[19] = 's'
++ 
++ 10
+  (args) argv[20] = 't'
++ 
++ 10
+  (args) argv[21] = 'u'
++ 
++ 10
+  (args) argv[22] = 'v'
++ 
++ 10
+  (args) argv[23] = null
++ 
++ 10
+  (args) end
++ 
++ 1
+  args-many: exit(0)

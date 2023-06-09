@@ -1,0 +1,31 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (sm-seq-block) begin
+  (sm-seq-block) create "noodle"
+  (sm-seq-block) open "noodle"
+  (sm-seq-block) writing "noodle"
+  (sm-seq-block) close "noodle"
+  (sm-seq-block) open "noodle" for verification
+  (sm-seq-block) verified contents of "noodle"
+  (sm-seq-block) close "noodle"
+  (sm-seq-block) end
+Differences in `diff -u' format:
++ 
++ 10
+  (sm-seq-block) begin
++ 
++ 10
+  (sm-seq-block) create "noodle"
+- (sm-seq-block) open "noodle"
+- (sm-seq-block) writing "noodle"
+- (sm-seq-block) close "noodle"
+- (sm-seq-block) open "noodle" for verification
+- (sm-seq-block) verified contents of "noodle"
+- (sm-seq-block) close "noodle"
+- (sm-seq-block) end
++ 
++ 5
+
+(Process exit codes are excluded for matching purposes.)

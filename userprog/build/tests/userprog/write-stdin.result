@@ -1,0 +1,35 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (write-stdin) begin
+  (write-stdin) end
+  write-stdin: exit(0)
+Differences in `diff -u' format:
++ 
++ 10
+  (write-stdin) begin
++ 
++ 10
++ {°ÿGG
++ 10
+  (write-stdin) end
++ 
++ 1
+  write-stdin: exit(0)
+Acceptable output:
+  (write-stdin) begin
+  write-stdin: exit(-1)
+Differences in `diff -u' format:
++ 
++ 10
+  (write-stdin) begin
+- write-stdin: exit(-1)
++ 
++ 10
++ {°ÿGG
++ 10
++ (write-stdin) end
++ 
++ 1
++ write-stdin: exit(0)

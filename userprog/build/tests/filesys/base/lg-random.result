@@ -1,0 +1,27 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (lg-random) begin
+  (lg-random) create "bazzle"
+  (lg-random) open "bazzle"
+  (lg-random) write "bazzle" in random order
+  (lg-random) read "bazzle" in random order
+  (lg-random) close "bazzle"
+  (lg-random) end
+Differences in `diff -u' format:
++ 
++ 10
+  (lg-random) begin
++ 
++ 10
+  (lg-random) create "bazzle"
+- (lg-random) open "bazzle"
+- (lg-random) write "bazzle" in random order
+- (lg-random) read "bazzle" in random order
+- (lg-random) close "bazzle"
+- (lg-random) end
++ 
++ 5
+
+(Process exit codes are excluded for matching purposes.)

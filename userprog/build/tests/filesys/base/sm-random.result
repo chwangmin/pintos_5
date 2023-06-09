@@ -1,0 +1,27 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (sm-random) begin
+  (sm-random) create "bazzle"
+  (sm-random) open "bazzle"
+  (sm-random) write "bazzle" in random order
+  (sm-random) read "bazzle" in random order
+  (sm-random) close "bazzle"
+  (sm-random) end
+Differences in `diff -u' format:
++ 
++ 10
+  (sm-random) begin
++ 
++ 10
+  (sm-random) create "bazzle"
+- (sm-random) open "bazzle"
+- (sm-random) write "bazzle" in random order
+- (sm-random) read "bazzle" in random order
+- (sm-random) close "bazzle"
+- (sm-random) end
++ 
++ 5
+
+(Process exit codes are excluded for matching purposes.)

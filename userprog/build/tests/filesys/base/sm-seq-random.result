@@ -1,0 +1,31 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (sm-seq-random) begin
+  (sm-seq-random) create "nibble"
+  (sm-seq-random) open "nibble"
+  (sm-seq-random) writing "nibble"
+  (sm-seq-random) close "nibble"
+  (sm-seq-random) open "nibble" for verification
+  (sm-seq-random) verified contents of "nibble"
+  (sm-seq-random) close "nibble"
+  (sm-seq-random) end
+Differences in `diff -u' format:
++ 
++ 10
+  (sm-seq-random) begin
++ 
++ 10
+  (sm-seq-random) create "nibble"
+- (sm-seq-random) open "nibble"
+- (sm-seq-random) writing "nibble"
+- (sm-seq-random) close "nibble"
+- (sm-seq-random) open "nibble" for verification
+- (sm-seq-random) verified contents of "nibble"
+- (sm-seq-random) close "nibble"
+- (sm-seq-random) end
++ 
++ 5
+
+(Process exit codes are excluded for matching purposes.)
